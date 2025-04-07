@@ -97,8 +97,9 @@
       </ul>
       <p class="text-lg text-gray-800 mt-6">Whether you're seeking personal healing or workplace wellness solutions,
         we're here to support your growth and well-being—every step of the way.</p>
-      <p class="text-lg text-teal-700 font-semibold mt-4">Let’s take the first step together. <a href="#contact"
-          class="text-yellow-500 underline hover:text-yellow-600">Contact us today</a> to begin your journey.</p>
+      <p class="text-lg text-teal-700 font-semibold mt-4">Let’s take the first step together. <a href="#contact" id="body-contact"
+          class="text-yellow-500 underline hover:text-yellow-600">Contact us</a> today or <a href="#contact" id="body-book"
+          class="text-yellow-500 underline hover:text-yellow-600">book an appointment</a> to begin your journey.</p>
     </div>
     <figure class="text-center">
       <img src="images/anita-austvika-nrbpvz2pPOM-unsplash.jpg" alt="Therapist comforting client"
@@ -223,6 +224,20 @@
       }, 500); // Delay to ensure the section is fully visible
     });
 
+    document.getElementById('body-contact').addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); // Scroll to the contact section
+      setTimeout(() => {
+        document.querySelector('#contact .spwidget-button').click(); // Trigger the contact widget button
+      }, 500); // Delay to ensure the section is fully visible
+    });
+    document.getElementById('body-book').addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      document.getElementById('book').scrollIntoView({ behavior: 'smooth' }); // Scroll to the book section
+      setTimeout(() => {
+        document.querySelector('#book .spwidget-button').click(); // Trigger the book widget button
+      }, 500); // Delay to ensure the section is fully visible
+    });
     document.getElementById('menu-book').addEventListener('click', (e) => {
       e.preventDefault(); // Prevent default anchor behavior
       document.getElementById('book').scrollIntoView({ behavior: 'smooth' }); // Scroll to the book section
