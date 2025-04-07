@@ -23,12 +23,15 @@
       </div>
       <!-- Hamburger Button -->
       <button id="menu-toggle" class="block md:hidden text-teal-700 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
       <!-- Navigation Menu -->
-      <nav id="menu" class="hidden md:flex gap-6 text-teal-700 font-semibold">
+      <nav id="menu" class="hidden md:flex flex-col gap-6 text-teal-700 font-semibold relative">
         <ul class="flex flex-col md:flex-row md:gap-6">
           <li><a href="#about" class="hover:text-yellow-500">About</a></li>
           <li><a href="#services" class="hover:text-yellow-500">Services</a></li>
@@ -141,10 +144,13 @@
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
   
     menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden'); // Toggles the 'hidden' class to show/hide the menu
-      menuToggle.classList.toggle('hidden'); // Hides the hamburger icon when the menu is expanded
+      menu.classList.toggle('hidden'); // Toggles the menu visibility
+      hamburgerIcon.classList.toggle('hidden'); // Toggles the hamburger icon visibility
+      closeIcon.classList.toggle('hidden'); // Toggles the close icon visibility
     });
   </script>
 </body>
