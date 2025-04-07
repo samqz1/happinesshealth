@@ -46,8 +46,8 @@
           <li><a href="#about" class="hover:text-yellow-500">About</a></li>
           <li><a href="#services" class="hover:text-yellow-500">Services</a></li>
           <li><a href="#team" class="hover:text-yellow-500">Our Team</a></li>
-          <li><a href="#contact" class="hover:text-yellow-500">Contact</a></li>
-          <li><a href="#book" class="text-yellow-500">Book Now</a></li>
+          <li><a href="#contact" id="menu-contact" class="hover:text-yellow-500">Contact</a></li>
+          <li><a href="#book" id="menu-book" class="text-yellow-500">Book Now</a></li>
         </ul>
       </nav>
     </div>
@@ -213,6 +213,23 @@
   <script>
     const heroVideo = document.getElementById('hero-video');
     heroVideo.playbackRate = 0.5; // Adjust the playback rate (0.5 = half speed, 1 = normal speed, 2 = double speed)
+  </script>
+  <script>
+    document.getElementById('menu-contact').addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); // Scroll to the contact section
+      setTimeout(() => {
+        document.querySelector('#contact .spwidget-button').click(); // Trigger the contact widget button
+      }, 500); // Delay to ensure the section is fully visible
+    });
+
+    document.getElementById('menu-book').addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      document.getElementById('book').scrollIntoView({ behavior: 'smooth' }); // Scroll to the book section
+      setTimeout(() => {
+        document.querySelector('#book .spwidget-button').click(); // Trigger the book widget button
+      }, 500); // Delay to ensure the section is fully visible
+    });
   </script>
 </body>
 
