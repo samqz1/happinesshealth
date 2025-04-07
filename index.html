@@ -60,22 +60,19 @@
     </video>
     <!-- Overlay -->
     <div class="absolute inset-0 bg-white bg-opacity-70"></div>
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-gray-800 -mt-20">
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-gray-800 mt-0 md:-mt-20">
       <img src="images/hh_logo.png" alt="Happiness Health" 
-           class="w-full max-w-sm sm:max-w-md mx-auto mb-4 rounded-lg shadow-white object-contain"
+           class="w-3/4 sm:w-full max-w-sm sm:max-w-md mx-auto mb-4 rounded-lg shadow-white object-contain"
            style="height: auto;">
       <h2 class="text-5xl font-bold mb-4">Feel better. Live brighter.</h2>
-      <p class="text-lg max-w-xl mx-auto mb-6">Confidential, compassionate care for individuals, couples, and families
-        in Maryland. Book a virtual or in-person session with one of our licensed therapists today.</p>
       <div class="spwidget-button-wrapper">
-        <a href="https://happiness-health.clientsecure.me"
-          class="spwidget-button bg-yellow-400 text-teal-800 px-6 py-3 rounded shadow hover:bg-yellow-500 mb-2 font-semibold inline-block"
-          data-spwidget-scope-id="601a5cc1-3802-48be-9db4-6a3768b9bf91" data-spwidget-scope-uri="happiness-health"
-          data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b"
-          data-spwidget-scope-global data-spwidget-autobind>
+        <a href="#book" id="hero-book" 
+          class="spwidget-button bg-yellow-400 text-teal-800 px-6 py-3 rounded shadow hover:bg-yellow-500 mb-2 font-semibold inline-block">
           Book A Session
         </a>
       </div>
+      <p class="text-lg max-w-xl mx-auto mb-6">Confidential, compassionate care for individuals, couples, and families
+        in Maryland. Book a virtual or in-person session with one of our licensed therapists today.</p>
     </div>
   </section>
 
@@ -217,35 +214,23 @@
     heroVideo.playbackRate = 0.5; // Adjust the playback rate (0.5 = half speed, 1 = normal speed, 2 = double speed)
   </script>
   <script>
-    document.getElementById('menu-contact').addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent default anchor behavior
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); // Scroll to the contact section
-      setTimeout(() => {
-        document.querySelector('#contact .spwidget-button').click(); // Trigger the contact widget button
-      }, 500); // Delay to ensure the section is fully visible
-    });
+    // Reusable function to handle scrolling and triggering widget buttons
+    function handleScrollAndTrigger(buttonId, sectionId, widgetSelector) {
+      document.getElementById(buttonId).addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Scroll to the target section
+        setTimeout(() => {
+          document.querySelector(widgetSelector).click(); // Trigger the widget button
+        }, 500); // Delay to ensure the section is fully visible
+      });
+    }
 
-    document.getElementById('body-contact').addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent default anchor behavior
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); // Scroll to the contact section
-      setTimeout(() => {
-        document.querySelector('#contact .spwidget-button').click(); // Trigger the contact widget button
-      }, 500); // Delay to ensure the section is fully visible
-    });
-    document.getElementById('body-book').addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent default anchor behavior
-      document.getElementById('book').scrollIntoView({ behavior: 'smooth' }); // Scroll to the book section
-      setTimeout(() => {
-        document.querySelector('#book .spwidget-button').click(); // Trigger the book widget button
-      }, 500); // Delay to ensure the section is fully visible
-    });
-    document.getElementById('menu-book').addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent default anchor behavior
-      document.getElementById('book').scrollIntoView({ behavior: 'smooth' }); // Scroll to the book section
-      setTimeout(() => {
-        document.querySelector('#book .spwidget-button').click(); // Trigger the book widget button
-      }, 500); // Delay to ensure the section is fully visible
-    });
+    // Attach event listeners for Contact and Book Now buttons
+    handleScrollAndTrigger('menu-contact', 'contact', '#contact .spwidget-button');
+    handleScrollAndTrigger('body-contact', 'contact', '#contact .spwidget-button');
+    handleScrollAndTrigger('menu-book', 'book', '#book .spwidget-button');
+    handleScrollAndTrigger('body-book', 'book', '#book .spwidget-button');
+    handleScrollAndTrigger('hero-book', 'book', '#book .spwidget-button'); // Add behavior for the hero button
   </script>
 </body>
 
