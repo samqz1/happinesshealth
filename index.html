@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script defer src="https://scripts.simplepractice.com/assets/integrations/clientportal.js"></script>
   <style>
+    /* General Styles */
     body {
       font-family: 'Inter', sans-serif;
     }
@@ -20,14 +21,41 @@
     .shadow-white {
       filter: drop-shadow(0 0 100px rgba(255, 255, 255, 0.8));
     }
+
+    .hero-image {
+      max-height: 40vh;
+      object-fit: contain;
+    }
+
+    @media (orientation: landscape) {
+      .hero-image {
+        max-height: 35vh;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-logo {
+        height: 4rem;
+      }
+
+      .responsive-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .hidden-on-mobile {
+        display: none;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
+  <!-- Header Section -->
   <header class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
       <div class="flex items-center space-x-4">
-        <img src="images/hh_logo.png" alt="Happiness Health Logo" class="max-w-md" style="height: 8rem;">
+        <img src="images/hh_logo_sm.png" alt="Happiness Health Logo" class="header-logo">
       </div>
       <!-- Hamburger Button -->
       <button id="menu-toggle" class="block md:hidden text-teal-700 focus:outline-none">
@@ -41,8 +69,8 @@
         </svg>
       </button>
       <!-- Navigation Menu -->
-      <nav id="menu" class="hidden md:flex flex-col gap-6 text-teal-700 font-semibold relative">
-        <ul class="flex flex-col md:flex-row md:gap-6">
+      <nav id="menu" class="hidden md:flex flex-col md:flex-row gap-6 text-teal-700 font-semibold">
+        <ul class="flex flex-col md:flex-row gap-6">
           <li><a href="#about" class="hover:text-yellow-500">About</a></li>
           <li><a href="#services" class="hover:text-yellow-500">Services</a></li>
           <li><a href="#team" class="hover:text-yellow-500">Our Team</a></li>
@@ -53,6 +81,7 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="relative h-screen text-center overflow-hidden">
     <video id="hero-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
       <source src="videos/5821457-hd_1920_1080_120fps.mp4" type="video/mp4">
@@ -60,18 +89,15 @@
     </video>
     <!-- Overlay -->
     <div class="absolute inset-0 bg-white bg-opacity-70"></div>
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-gray-800 mt-0 md:-mt-20">
-      <img src="images/hh_logo.png" alt="Happiness Health" 
-           class="w-3/4 sm:w-full max-w-sm sm:max-w-md mx-auto mb-4 rounded-lg shadow-white object-contain"
-           style="height: auto;">
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-gray-800 pt-8 md:pt-0">
+      <img src="images/hh_logo.png" alt="Happiness Health" class="hero-image w-full max-w-sm sm:max-w-md mx-auto mb-4 shadow-white">
       <h2 class="text-5xl font-bold mb-4">Feel better. Live brighter.</h2>
       <div class="spwidget-button-wrapper">
-        <a href="#book" id="hero-book" 
-          class="spwidget-button bg-yellow-400 text-teal-800 px-6 py-3 rounded shadow hover:bg-yellow-500 mb-2 font-semibold inline-block">
+        <a href="#book" id="hero-book" class="spwidget-button bg-yellow-400 text-teal-800 px-6 py-3 rounded shadow hover:bg-yellow-500 font-semibold">
           Book A Session
         </a>
       </div>
-      <p class="text-lg max-w-xl mx-auto mb-6">Confidential, compassionate care for individuals, couples, and families
+      <p class="text-lg max-w-xl mx-auto mt-6">Confidential, compassionate care for individuals, couples, and families
         in Maryland. Book a virtual or in-person session with one of our licensed therapists today.</p>
     </div>
   </section>
@@ -82,7 +108,8 @@
       <p class="text-lg text-gray-800 mb-6">At Happiness Health, we are passionate about guiding individuals, children,
         and families across Maryland toward lasting health and happiness through compassionate, personalized mental
         health care. Our team of licensed professionals brings together decades of clinical experience and leadership to
-        offer expert therapy, counseling, and coaching tailored to your unique needs.</p>
+        offer expert therapy, counseling, and coaching tailored to your unique needs. We specialize in evidence-based
+        approaches, including Brainspotting and EMDR therapy, to help you heal and thrive.</p>
       <h4 class="text-xl font-semibold text-teal-700 mt-6 mb-4">Why Choose Us?</h4>
       <ul class="list-disc pl-5 text-gray-800 space-y-2">
         <li><strong>Diverse Expertise:</strong> Trauma treatment, substance use recovery, and psychotherapy for all
@@ -128,6 +155,11 @@
         <p class="text-gray-800">Collaborative sessions to promote understanding, healthy boundaries, and emotional
           growth.</p>
       </div>
+      <div class="bg-white p-6 rounded shadow">
+        <h4 class="font-bold text-lg mb-2 text-teal-700">Brainspotting & EMDR Therapy</h4>
+        <p class="text-gray-800">Advanced therapeutic techniques to process trauma, reduce anxiety, and promote emotional
+          healing.</p>
+      </div>
     </div>
   </section>
 
@@ -166,7 +198,8 @@
   </section>
 <!-- Image Section -->
 <figure class="text-center py-8">
-  <img src="images/christopher-jolly-j2hN1GGS4w8-unsplash.jpg" alt="Relaxing nature" class="rounded-lg shadow-md mx-auto max-w-md">
+  <img src="images/christopher-jolly-j2hN1GGS4w8-unsplash.jpg" alt="Relaxing nature" 
+       class="responsive-image rounded-lg shadow-md mx-auto w-full sm:max-w-xs h-auto">
   <figcaption class="text-sm mt-2 text-gray-600">Photo by <a
       href="https://unsplash.com/@chris_jolly?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
       class="underline hover:text-teal-700">Christopher Jolly</a> on <a
@@ -197,31 +230,33 @@
     <p class="text-sm mt-2">This site does not provide emergency mental health services. If you are in crisis, please
       call 911 or visit your nearest emergency room.</p>
   </footer>
+
+  <!-- Scripts -->
   <script>
+    // Toggle menu visibility
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
     const hamburgerIcon = document.getElementById('hamburger-icon');
     const closeIcon = document.getElementById('close-icon');
 
     menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden'); // Toggles the menu visibility
-      hamburgerIcon.classList.toggle('hidden'); // Toggles the hamburger icon visibility
-      closeIcon.classList.toggle('hidden'); // Toggles the close icon visibility
+      menu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
     });
-  </script>
-  <script>
+
+    // Adjust hero video playback speed
     const heroVideo = document.getElementById('hero-video');
-    heroVideo.playbackRate = 0.5; // Adjust the playback rate (0.5 = half speed, 1 = normal speed, 2 = double speed)
-  </script>
-  <script>
+    heroVideo.playbackRate = 0.5;
+
     // Reusable function to handle scrolling and triggering widget buttons
     function handleScrollAndTrigger(buttonId, sectionId, widgetSelector) {
       document.getElementById(buttonId).addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default anchor behavior
-        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Scroll to the target section
+        e.preventDefault();
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
         setTimeout(() => {
-          document.querySelector(widgetSelector).click(); // Trigger the widget button
-        }, 500); // Delay to ensure the section is fully visible
+          document.querySelector(widgetSelector).click();
+        }, 500);
       });
     }
 
@@ -230,7 +265,7 @@
     handleScrollAndTrigger('body-contact', 'contact', '#contact .spwidget-button');
     handleScrollAndTrigger('menu-book', 'book', '#book .spwidget-button');
     handleScrollAndTrigger('body-book', 'book', '#book .spwidget-button');
-    handleScrollAndTrigger('hero-book', 'book', '#book .spwidget-button'); // Add behavior for the hero button
+    handleScrollAndTrigger('hero-book', 'book', '#book .spwidget-button');
   </script>
 </body>
 
