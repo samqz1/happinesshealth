@@ -138,5 +138,14 @@
     <p>&copy; 2025 Happiness Health. All rights reserved.</p>
     <p class="text-sm mt-2">This site does not provide emergency mental health services. If you are in crisis, please call 911 or visit your nearest emergency room.</p>
   </footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+  
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden'); // Toggles the 'hidden' class to show/hide the menu
+      menuToggle.classList.toggle('hidden'); // Hides the hamburger icon when the menu is expanded
+    });
+  </script>
 </body>
 </html>
