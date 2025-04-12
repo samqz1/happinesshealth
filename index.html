@@ -10,12 +10,12 @@
   <meta name="keywords"
     content="Maryland therapy, virtual counseling Maryland, family therapy, child therapy, mental health, life coaching, trauma therapy">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <script defer src="https://scripts.simplepractice.com/assets/integrations/clientportal.js"></script>
   <style>
     /* General Styles */
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .shadow-white {
@@ -55,7 +55,8 @@
   <header class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
       <div class="flex items-center space-x-4">
-        <img src="images/hh_logo_sm.png" alt="Happiness Health Logo" class="header-logo">
+        <img src="images/hh_logo.png" alt="Happiness Health Logo"
+          class="header-logo w-24 h-auto sm:w-32 object-contain">
       </div>
       <!-- Hamburger Button -->
       <button id="menu-toggle" class="block md:hidden text-teal-700 focus:outline-none">
@@ -90,15 +91,83 @@
     <!-- Overlay -->
     <div class="absolute inset-0 bg-white bg-opacity-70"></div>
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-gray-800 pt-8 md:pt-0">
-      <img src="images/hh_logo.png" alt="Happiness Health" class="hero-image w-full max-w-sm sm:max-w-md mx-auto mb-4 shadow-white">
-      <h2 class="text-5xl font-bold mb-4">Feel better. Live brighter.</h2>
-      <div class="spwidget-button-wrapper">
-        <a href="#book" id="hero-book" class="spwidget-button bg-yellow-400 text-teal-800 px-6 py-3 rounded shadow hover:bg-yellow-500 font-semibold">
+      <img src="images/hh_logo.png" alt="Happiness Health"
+        class="hero-image w-full max-w-sm sm:max-w-md mx-auto mb-4 shadow-white">
+      <h2 class="text-5xl font-bold mb-4">
+        <span style="color: #125771;">Feel</span>
+        <span style="color: #011993;">better.</span>
+        <span style="color: #125771;">Live</span>
+        <span style="color: #2A9D8F;">brighter.</span>
+      </h2>
+      <div class="spwidget-button-wrapper mt-6">
+        <a href="#book" id="hero-book"
+          class="spwidget-button bg-yellow-400 text-teal-800 px-6 py-3 rounded shadow hover:bg-yellow-500 font-semibold ">
           Book A Session
         </a>
       </div>
-      <p class="text-lg max-w-xl mx-auto mt-6">Confidential, compassionate care for individuals, couples, and families
-        in Maryland. Book a virtual or in-person session with one of our licensed therapists today.</p>
+    </div>
+  </section>
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <!-- Telehealth Appointments -->
+      <div class="bg-white p-6 rounded-lg shadow-md text-center">
+        <div class="icon-circle mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52"
+            class="icon icon-telehealth">
+            <path fill-rule="evenodd"
+              d="M38.7 39.87v-2.04l1.65-1.2C45.34 33 48 27.86 48 22.58 48 12.85 38.68 4 26 4S4 12.85 4 22.58c0 9.73 9.32 18.57 22 18.57.67 0 1.4-.03 2.22-.1l1.12-.1 1 .5 8.36 4.12v-5.7zm4 12.13l-4-1.97-10.13-5c-.93.08-1.77.12-2.57.12-14.34 0-26-10.12-26-22.57C0 10.13 11.66 0 26 0s26 10.13 26 22.58c0 6.69-3.38 12.98-9.3 17.29V52zM19 18c0-1.1.9-2 2-2h15a2 2 0 012 2v10a2 2 0 01-2 2H21a2 2 0 01-2-2v-1l-4.55 2.28a1 1 0 01-1.45-.9V17.62a1 1 0 011.45-.9L19 19v-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h4 class="text-teal-700 font-semibold text-lg">Offers Telehealth Appointments</h4>
+      </div>
+
+      <!-- Online Payments -->
+      <div class="bg-white p-6 rounded-lg shadow-md text-center">
+        <div class="icon-circle mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="42" viewBox="0 0 52 42" class="icon icon-card">
+            <path
+              d="M46.8 0H5.2A5.2 5.2 0 000 5.2v31.2c0 2.9 2.3 5.2 5.2 5.2h41.6c2.9 0 5.2-2.3 5.2-5.2V5.2C52 2.3 49.7 0 46.8 0zm0 36.4H5.2V20.8h41.6v15.6zm0-26H5.2V5.2h41.6v5.2z">
+            </path>
+          </svg>
+        </div>
+        <h4 class="text-teal-700 font-semibold text-lg">Accepts Online Payments</h4>
+      </div>
+
+      <!-- Accepts Insurance -->
+      <div class="bg-white p-6 rounded-lg shadow-md text-center">
+        <div class="icon-circle mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="68" height="40" viewBox="0 0 68 40"
+            class="icon icon-check-double">
+            <path fill-rule="evenodd"
+              d="M45.36 1.16a3 3 0 014.24 0 3.02 3.02 0 010 4.21L32.62 22.4l-4.25-4.25L45.36 1.16zm-31.9 36.13L.89 24.71a3.04 3.04 0 010-4.28 3 3 0 014.25 0l14.7 14.76-2.12 2.1a3 3 0 01-4.24 0zm20.96.72a3.03 3.03 0 01-.2.2 2.97 2.97 0 01-4.2 0l-12.4-12.4a2.97 2.97 0 014.2-4.2l10.3 10.3L62.16 1.87a2.97 2.97 0 014.2 4.2L34.42 38.01z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h4 class="text-teal-700 font-semibold text-lg">Accepts Insurance</h4>
+      </div>
+
+      <!-- Accepting New Clients -->
+      <div class="bg-white p-6 rounded-lg shadow-md text-center">
+        <div class="icon-circle mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="46" height="41" viewBox="0 0 46 41"
+            class="icon icon-client-check">
+            <path fill-rule="evenodd"
+              d="M20.3 20.41a9.83 9.83 0 100-19.66 9.83 9.83 0 000 19.66zm2.46 19.67l-2.12-2.12a7.37 7.37 0 01.05-10.47l2.07-2.01c-.96-.1-1.68-.15-2.46-.15-6.57 0-19.67 3.3-19.67 9.83v4.92h22.13zm6.03-1.19c.96.96 2.53.96 3.49 0l12.64-12.73c.93-.93.93-2.46 0-3.42l-.03-.02a2.45 2.45 0 00-3.46 0l-10.9 10.96-3.36-3.36a2.42 2.42 0 00-3.44 0l-.03.02a2.43 2.43 0 000 3.42l5.09 5.13z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h4 class="text-teal-700 font-semibold text-lg">Accepting New Clients</h4>
+      </div>
+    </div>
+  </section>
+  <!-- Highlighted Text Section -->
+  <section class="py-8 px-4 text-center" style="background-color: #D6F2F0;">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-lg text-gray-800 font-semibold">
+        Confidential, compassionate care for individuals, couples, and families in Maryland. Book a virtual or in-person
+        session with one of our licensed therapists today.
+      </p>
     </div>
   </section>
 
@@ -122,9 +191,10 @@
       </ul>
       <p class="text-lg text-gray-800 mt-6">Whether you're seeking personal healing or workplace wellness solutions,
         we're here to support your growth and well-being—every step of the way.</p>
-      <p class="text-lg text-teal-700 font-semibold mt-4">Let’s take the first step together. <a href="#contact" id="body-contact"
-          class="text-yellow-500 underline hover:text-yellow-600">Contact us</a> today or <a href="#contact" id="body-book"
-          class="text-yellow-500 underline hover:text-yellow-600">book an appointment</a> to begin your journey.</p>
+      <p class="text-lg text-teal-700 font-semibold mt-4">Let’s take the first step together. <a href="#contact"
+          id="body-contact" class="text-yellow-500 underline hover:text-yellow-600">Contact us</a> today or <a
+          href="#contact" id="body-book" class="text-yellow-500 underline hover:text-yellow-600">book an appointment</a>
+        to begin your journey.</p>
     </div>
     <figure class="text-center">
       <img src="images/anita-austvika-nrbpvz2pPOM-unsplash.jpg" alt="Therapist comforting client"
@@ -157,7 +227,8 @@
       </div>
       <div class="bg-white p-6 rounded shadow">
         <h4 class="font-bold text-lg mb-2 text-teal-700">Brainspotting & EMDR Therapy</h4>
-        <p class="text-gray-800">Advanced therapeutic techniques to process trauma, reduce anxiety, and promote emotional
+        <p class="text-gray-800">Advanced therapeutic techniques to process trauma, reduce anxiety, and promote
+          emotional
           healing.</p>
       </div>
     </div>
@@ -196,17 +267,17 @@
     </div>
     <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
   </section>
-<!-- Image Section -->
-<figure class="text-center py-8">
-  <img src="images/christopher-jolly-j2hN1GGS4w8-unsplash.jpg" alt="Relaxing nature" 
-       class="responsive-image rounded-lg shadow-md mx-auto w-full sm:max-w-xs h-auto">
-  <figcaption class="text-sm mt-2 text-gray-600">Photo by <a
-      href="https://unsplash.com/@chris_jolly?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-      class="underline hover:text-teal-700">Christopher Jolly</a> on <a
-      href="https://unsplash.com/photos/in-distant-green-pine-trees-j2hN1GGS4w8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-      class="underline hover:text-teal-700">Unsplash</a>
-  </figcaption>
-</figure>
+  <!-- Image Section -->
+  <figure class="text-center py-8">
+    <img src="images/christopher-jolly-j2hN1GGS4w8-unsplash.jpg" alt="Relaxing nature"
+      class="responsive-image rounded-lg shadow-md mx-auto w-full sm:max-w-xs h-auto">
+    <figcaption class="text-sm mt-2 text-gray-600">Photo by <a
+        href="https://unsplash.com/@chris_jolly?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+        class="underline hover:text-teal-700">Christopher Jolly</a> on <a
+        href="https://unsplash.com/photos/in-distant-green-pine-trees-j2hN1GGS4w8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+        class="underline hover:text-teal-700">Unsplash</a>
+    </figcaption>
+  </figure>
   <section id="book" class="py-16 px-4 text-center">
     <h3 class="text-2xl font-semibold mb-4 text-teal-700">Book an Appointment</h3>
     <p class="mb-6 text-gray-800">Our secure client portal makes scheduling simple and private. Select your preferred
