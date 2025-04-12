@@ -47,6 +47,20 @@
         display: none;
       }
     }
+
+    .insurance-logo {
+      width: 6rem; /* Increase size */
+      height: auto;
+      opacity: 0.7; /* Add opacity */
+      filter: grayscale(100%) brightness(1.5) hue-rotate(150deg); /* Light teal filter */
+      transition: all 0.3s ease; /* Smooth transition */
+    }
+
+    .insurance-logo:hover {
+      opacity: 1; /* Return to full opacity */
+      filter: none; /* Remove filter */
+      transform: scale(1.1); /* Slight zoom effect */
+    }
   </style>
 </head>
 
@@ -94,11 +108,7 @@
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-gray-800 pt-8 md:pt-0">
       <img src="images/hh_logo.png" alt="Happiness Health"
         class="hero-image w-full max-w-sm sm:max-w-md mx-auto mb-4 shadow-white">
-      <h2 class="text-5xl font-bold mb-4">
-        <span style="color: #125771;">Feel</span>
-        <span style="color: #011993;">better.</span>
-        <span style="color: #125771;">Live</span>
-        <span style="color: #2A9D8F;">brighter.</span>
+      <h2 class="text-5xl font-bold mb-4"> Feel better. Live brighter.
       </h2>
       <div class="spwidget-button-wrapper mt-6">
         <a href="#book" id="hero-book"
@@ -294,22 +304,22 @@
     <h3 class="text-2xl font-semibold mb-6 text-center text-teal-700">Insurance Accepted</h3>
     <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
       <div class="bg-white p-6 rounded shadow">
-        <img src="images/aetna_logo.png" alt="Aetna" class="mx-auto w-24 h-auto">
+        <img src="images/aetna_logo.png" alt="Aetna" class="insurance-logo mx-auto">
       </div>
       <div class="bg-white p-6 rounded shadow">
-        <img src="images/anthem_logo.png" alt="Anthem" class="mx-auto w-24 h-auto">
+        <img src="images/anthem_logo.png" alt="Anthem" class="insurance-logo mx-auto">
       </div>
       <div class="bg-white p-6 rounded shadow">
-        <img src="images/cigna_logo.png" alt="Cigna" class="mx-auto w-24 h-auto">
+        <img src="images/cigna_logo.png" alt="Cigna" class="insurance-logo mx-auto">
       </div>
       <div class="bg-white p-6 rounded shadow">
-        <img src="images/blue_cross_logo.png" alt="Blue Cross" class="mx-auto w-24 h-auto">
+        <img src="images/blue_cross_logo.png" alt="Blue Cross" class="insurance-logo mx-auto">
       </div>
       <div class="bg-white p-6 rounded shadow">
-        <img src="images/tricare_logo.webp" alt="TRICARE East" class="mx-auto w-24 h-auto">
+        <img src="images/tricare_logo.webp" alt="TRICARE East" class="insurance-logo mx-auto">
       </div>
       <div class="bg-white p-6 rounded shadow">
-        <img src="images/united_healthcare_logo.png" alt="United Healthcare" class="mx-auto w-24 h-auto">
+        <img src="images/united_healthcare_logo.png" alt="United Healthcare" class="insurance-logo mx-auto">
       </div>
     </div>
   </section>
